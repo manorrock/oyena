@@ -4,20 +4,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.omnifaces.oyena</groupId>
+    <groupId>com.manorrock.oyena</groupId>
     <artifactId>project</artifactId>
-    <version>20.8.0-SNAPSHOT</version>
+    <version>21.8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>OmniFaces Oyena - Project</name>
-    <url>https://github.com/omnifaces/oyena</url>
+    <name>Manorrock Oyena - Project</name>
+    <url>https://github.com/manorrock/oyena</url>
     <description>
-        OmniFaces Oyena delivers you with several add-on modules that you can use
+        Manorrock Oyena delivers you with several add-on modules that you can use
         with Eclipse Mojarra or Apache MyFaces
     </description>
     <licenses>
         <license>
-            <name>OmniFaces Oyena License</name>
-            <url>https://github.com/omnifaces/oyena/blob/master/LICENSE</url>
+            <name>Manorrock Oyena License</name>
+            <url>https://github.com/manorrock/oyena/blob/master/LICENSE</url>
         </license>
     </licenses>
     <build>
@@ -265,11 +265,6 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
-    <modules>
-        <module>action</module>
-        <module>cdi</module>
-        <module>rest</module>
-    </modules>
     <profiles>
         <profile>
             <id>test</id>
@@ -308,8 +303,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <scm>
-        <connection>scm:git:git://github.com/omnifaces/oyena.git</connection>
-        <developerConnection>scm:git:git@github.com:omnifaces/oyena.git</developerConnection>
-        <url>https://github.com/omnifaces/oyena</url>
+        <connection>scm:git:git://github.com/manorrock/oyena.git</connection>
+        <developerConnection>scm:git:git@github.com:manorrock/oyena.git</developerConnection>
+        <url>https://github.com/manorrock/oyena</url>
     </scm>
 </project>

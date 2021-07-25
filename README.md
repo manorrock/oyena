@@ -1,7 +1,7 @@
 
-# OmniFaces Oyena
+# Manorrock Oyena
 
-OmniFaces Oyena delivers you with add-on modules that you can use with your
+Manorrock Oyena delivers you with add-on modules that you can use with your
 Jakarta Faces applications.
 
 See the list below for the modules that are available.

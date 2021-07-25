@@ -1,7 +1,7 @@
 
 # Contributing
 
-How can I contribute to OmniFaces Oyena? Well it all depends on the level of 
+How can I contribute to Manorrock Oyena? Well it all depends on the level of 
 involvement you are aiming for. The following comes to mind:
 
 1. Write blog entries with example applications
@@ -14,5 +14,5 @@ Which ever level you pick we welcome you!
 ## Important notice
 
 Note if you file issues, answer questions and/or issue pull requests you agree
-that those contributions will be owned by OmniFaces.org and that OmniFaces.org
-can use those contributions in any manner OmniFaces.org so desires.
+that those contributions will be owned by Manorrock.com and that Manorrock.com
+can use those contributions in any manner Manorrock.com so desires.
