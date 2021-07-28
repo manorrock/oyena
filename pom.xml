@@ -232,6 +232,7 @@
     </distributionManagement>
     <modules>
         <module>converter</module>
+        <module>lifecycle</module>
     </modules>
     <profiles>
         <profile>
