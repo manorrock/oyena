@@ -15,6 +15,7 @@
         This sub-project delivers various Lifecycles.
     </description>
     <modules>
+        <module>action</module>
         <module>cdi</module>
     </modules>
 </project>
