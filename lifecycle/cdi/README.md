@@ -1,5 +1,5 @@
 
-# Manorrock Faces - CDI Lifecycle
+# Manorrock Oyena - CDI Lifecycle
 
 The CDI Lifecycle module delivers you with a CDI based Lifecycle that can
 be used to deliver CDI enabled lifecycles.

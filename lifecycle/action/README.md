@@ -1,8 +1,8 @@
 
-# OmniFaces Oyena Action
+# Manorrock Oyena - Action lifecycle
 
-The OmniFaces Oyena Action module delivers you with an action framework that you
-can use with Eclipse Mojarra or Apache MyFaces.
+This module delivers you with an action framework that you can use with Eclipse
+Mojarra or Apache MyFaces.
 
 ## Prerequisites
 
@@ -16,8 +16,8 @@ dependency:
 
 ```xml
     <dependency>
-      <groupId>org.Manorrock.com.oyena</groupId>
-      <artifactId>oyena-action</artifactId>
+      <groupId>com.manorrock.oyena.lifecycle</groupId>
+      <artifactId>oyena-lifecycle-action</artifactId>
       <version>x.y.z</version>
     </dependency>
 ```

@@ -17,5 +17,6 @@
     <modules>
         <module>action</module>
         <module>cdi</module>
+        <module>rest</module>
     </modules>
 </project>
