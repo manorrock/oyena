@@ -6,9 +6,9 @@ Jakarta Faces applications.
 
 See the list below for the modules that are available.
 
-1. [Action framework](action/README.md)
-2. [CDI integration](cdi/README.md)
-2. [REST framework](rest/README.md)
+1. [Action framework](lifecycle/action/README.md)
+2. [CDI integration](lifecycle/cdi/README.md)
+2. [REST framework](lifecyce/rest/README.md)
 
 ## How do I contribute?
 
