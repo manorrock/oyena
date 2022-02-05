@@ -9,11 +9,11 @@
     <version>21.8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Manorrock Oyena - Project</name>
-    <url>https://github.com/manorrock/oyena</url>
     <description>
         Manorrock Oyena delivers you with several add-on modules that you can use
         with Eclipse Mojarra or Apache MyFaces
     </description>
+    <url>https://github.com/manorrock/oyena</url>
     <licenses>
         <license>
             <name>Manorrock Oyena License</name>
@@ -248,6 +248,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -255,14 +256,14 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
-                                <configuration>
-                                    <gpgArguments>
-                                        <arg>--pinentry-mode</arg>
-                                        <arg>loopback</arg>
-                                    </gpgArguments>
-                                </configuration>
                             </execution>
                         </executions>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
