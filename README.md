@@ -1,5 +1,3 @@
-_This project is no longer being maintained and unless a maintainer steps up it will be removed Jan 1st, 2023_
-
 # Manorrock Oyena
 
 Manorrock Oyena delivers you with add-on modules that you can use with your
