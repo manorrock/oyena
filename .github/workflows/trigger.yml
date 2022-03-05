@@ -16,7 +16,7 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v2
       with:
-        token: ${{ secrets.GIT_PASSWORD }}
+        token: ${{ secrets.GIT_TOKEN }}
     - name: Release from given branch with given version
       run: |
         git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
