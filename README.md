@@ -1,5 +1,7 @@
 # Manorrock Oyena
 
+[![build](https://github.com/manorrock/oyena/actions/workflows/build.yml/badge.svg)](https://github.com/manorrock/oyena/actions/workflows/build.yml)
+
 Manorrock Oyena delivers you with add-on modules that you can use with your
 Jakarta Faces applications.
 
