@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.manorrock.oyena.test</groupId>
         <artifactId>project</artifactId>
-        <version>22.12.0-SNAPSHOT</version>
+        <version>22.12.0</version>
     </parent>
     <groupId>com.manorrock.oyena.test.lifecycle</groupId>
     <artifactId>project</artifactId>
