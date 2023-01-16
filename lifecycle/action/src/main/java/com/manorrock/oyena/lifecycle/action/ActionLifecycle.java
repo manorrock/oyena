@@ -72,13 +72,14 @@ public class ActionLifecycle extends Lifecycle {
      * Add a phase listener.
      *
      * <p>
-     * This is ignored by the Action lifecycle.
+     *  Phase listeners are not supported.
      * </p>
      *
      * @param phaseListener the phase listener.
      */
     @Override
     public void addPhaseListener(PhaseListener phaseListener) {
+        // phase listeners are not supported.
     }
 
     /**
@@ -106,8 +107,8 @@ public class ActionLifecycle extends Lifecycle {
      * Get the phase listeners.
      *
      * <p>
-     * As phase listeners are ignored by the Action lifecycle this will always
-     * return a zero length array.
+     * As phase listeners are not supported by the Action lifecycle this will
+     * always return a zero length array.
      * </p>
      *
      * @return the empty array of phase listeners.
@@ -121,13 +122,14 @@ public class ActionLifecycle extends Lifecycle {
      * Remove a phase listener.
      *
      * <p>
-     * This is ignored by the Action lifecycle.
+     *  Phase listeners are not supported.
      * </p>
      *
      * @param phaseListener the phase listener.
      */
     @Override
     public void removePhaseListener(PhaseListener phaseListener) {
+        // phase listeners are not supported.
     }
 
     /**
