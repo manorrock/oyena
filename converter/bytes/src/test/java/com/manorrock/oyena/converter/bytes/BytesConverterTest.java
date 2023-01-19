@@ -27,8 +27,7 @@
  */
 package com.manorrock.oyena.converter.bytes;
 
-import com.manorrock.oyena.converter.bytes.BytesConverter;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -36,7 +35,7 @@ import org.junit.jupiter.api.Test;
  * 
  * @author Manfred Riem (mriem@manorrock.com)
  */
-public class BytesConverterTest {
+class BytesConverterTest {
     
     /**
      * Test getAsString method.
