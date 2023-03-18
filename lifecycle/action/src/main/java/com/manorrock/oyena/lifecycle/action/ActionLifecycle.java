@@ -66,6 +66,7 @@ public class ActionLifecycle extends Lifecycle {
      * Constructor.
      */
     public ActionLifecycle() {
+        // nothing to do here.
     }
 
     /**

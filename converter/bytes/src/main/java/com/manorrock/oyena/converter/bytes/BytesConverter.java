@@ -68,8 +68,8 @@ public class BytesConverter implements Converter {
         String result = null;
         Long longValue = null;
 
-        if (value instanceof Long) {
-            longValue = (Long) value;
+        if (value instanceof Long l) {
+            longValue = l;
         } else if (value != null) {
             longValue = Long.valueOf(value.toString());
         }
