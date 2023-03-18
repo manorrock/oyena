@@ -89,8 +89,8 @@ public class DefaultActionParameterProducer implements ActionParameterProducer {
         ActionHeaderParameter result = null;
         if (annotations != null && annotations.length > 0) {
             for (Annotation annotation : annotations) {
-                if (annotation instanceof ActionHeaderParameter) {
-                    result = (ActionHeaderParameter) annotation;
+                if (annotation instanceof ActionHeaderParameter ahp) {
+                    result = ahp;
                     break;
                 }
             }
@@ -107,8 +107,8 @@ public class DefaultActionParameterProducer implements ActionParameterProducer {
         ActionPathParameter result = null;
         if (annotations != null && annotations.length > 0) {
             for (Annotation annotation : annotations) {
-                if (annotation instanceof ActionPathParameter) {
-                    result = (ActionPathParameter) annotation;
+                if (annotation instanceof ActionPathParameter app) {
+                    result = app;
                     break;
                 }
             }

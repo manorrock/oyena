@@ -73,8 +73,8 @@ public class DefaultActionMethodExecutor implements ActionMethodExecutor {
             }
             viewId = (String) actionMappingMatch.getMethod().invoke(
                     instance.get(), parameters);
-        } catch (Throwable throwable) {
-            throw new FacesException(throwable);
+        } catch (Exception exception) {
+            throw new FacesException(exception);
         }
         if (facesContext.getViewRoot() == null) {
             UIViewRoot viewRoot = facesContext.getApplication().getViewHandler().createView(facesContext, viewId);

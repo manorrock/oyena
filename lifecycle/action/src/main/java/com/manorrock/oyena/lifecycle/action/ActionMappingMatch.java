@@ -49,7 +49,7 @@ public class ActionMappingMatch {
     /**
      * Stores the bean.
      */
-    private Bean<?> bean;
+    private Bean bean;
 
     /**
      * Stores the method.

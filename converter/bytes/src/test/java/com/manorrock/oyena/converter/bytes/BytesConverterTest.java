@@ -41,7 +41,7 @@ class BytesConverterTest {
      * Test getAsString method.
      */
     @Test
-    public void testGetAsString() {
+    void testGetAsString() {
         BytesConverter converter = new BytesConverter();
         String result = converter.getAsString(null, null, 60);
         assertEquals("60 bytes", result);
@@ -51,7 +51,7 @@ class BytesConverterTest {
      * Test getAsString method.
      */
     @Test
-    public void testGetAsString2() {
+    void testGetAsString2() {
         BytesConverter converter = new BytesConverter();
         String result = converter.getAsString(null, null, 50 * 1024);
         assertEquals("50 KB", result);
@@ -61,7 +61,7 @@ class BytesConverterTest {
      * Test getAsString method.
      */
     @Test
-    public void testGetAsString3() {
+    void testGetAsString3() {
         BytesConverter converter = new BytesConverter();
         String result = converter.getAsString(null, null, 40 * 1024 * 1024);
         assertEquals("40 MB", result);
@@ -71,7 +71,7 @@ class BytesConverterTest {
      * Test getAsString method.
      */
     @Test
-    public void testGetAsString4() {
+    void testGetAsString4() {
         BytesConverter converter = new BytesConverter();
         String result = converter.getAsString(null, null, 30L * 1024 * 1024 * 1024);
         assertEquals("30 GB", result);
