@@ -74,6 +74,7 @@ public class RestLifecycle extends Lifecycle {
      */
     @Override
     public void addPhaseListener(PhaseListener phaseListener) {
+        // adding phase listeners is ignored.
     }
 
     /**
@@ -125,6 +126,7 @@ public class RestLifecycle extends Lifecycle {
      */
     @Override
     public void removePhaseListener(PhaseListener phaseListener) {
+        // removing phase listeners is ignored.
     }
 
     /**

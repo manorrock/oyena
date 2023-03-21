@@ -49,7 +49,7 @@ public class ActionMappingMatch {
     /**
      * Stores the bean.
      */
-    private Bean bean;
+    private Bean<? extends Object> bean;
 
     /**
      * Stores the method.
@@ -75,7 +75,7 @@ public class ActionMappingMatch {
      *
      * @return the bean.
      */
-    public Bean<?> getBean() {
+    public Bean<? extends Object> getBean() {
         return bean;
     }
 
@@ -129,7 +129,7 @@ public class ActionMappingMatch {
      *
      * @param bean the bean.
      */
-    public void setBean(Bean<?> bean) {
+    public void setBean(Bean<? extends Object> bean) {
         this.bean = bean;
     }
 
