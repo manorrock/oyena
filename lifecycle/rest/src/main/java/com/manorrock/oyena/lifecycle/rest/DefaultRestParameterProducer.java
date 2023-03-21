@@ -91,8 +91,8 @@ public class DefaultRestParameterProducer implements RestParameterProducer {
         RestHeaderParameter result = null;
         if (annotations != null && annotations.length > 0) {
             for (Annotation annotation : annotations) {
-                if (annotation instanceof RestHeaderParameter) {
-                    result = (RestHeaderParameter) annotation;
+                if (annotation instanceof RestHeaderParameter restHeaderParameter) {
+                    result = restHeaderParameter;
                     break;
                 }
             }
@@ -109,8 +109,8 @@ public class DefaultRestParameterProducer implements RestParameterProducer {
         RestPathParameter result = null;
         if (annotations != null && annotations.length > 0) {
             for (Annotation annotation : annotations) {
-                if (annotation instanceof RestPathParameter) {
-                    result = (RestPathParameter) annotation;
+                if (annotation instanceof RestPathParameter restPathParameter) {
+                    result = restPathParameter;
                     break;
                 }
             }
@@ -127,8 +127,8 @@ public class DefaultRestParameterProducer implements RestParameterProducer {
         RestQueryParameter result = null;
         if (annotations != null && annotations.length > 0) {
             for (Annotation annotation : annotations) {
-                if (annotation instanceof RestQueryParameter) {
-                    result = (RestQueryParameter) annotation;
+                if (annotation instanceof RestQueryParameter restQueryParameter) {
+                    result = restQueryParameter;
                     break;
                 }
             }

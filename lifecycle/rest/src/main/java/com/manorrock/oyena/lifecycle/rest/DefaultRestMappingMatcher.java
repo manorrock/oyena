@@ -98,9 +98,7 @@ public class DefaultRestMappingMatcher implements RestMappingMatcher {
         while (beans.hasNext()) {
             Bean<?> bean = beans.next();
             RestMappingMatch candidate = determineRestMappingMatch(facesContext, bean);
-            if (match == null) {
-                match = candidate;
-            } else if (candidate != null && candidate.getLength() > match.getLength()) {
+            if (match == null || (candidate != null && candidate.getLength() > match.getLength())) {
                 match = candidate;
             }
         }
