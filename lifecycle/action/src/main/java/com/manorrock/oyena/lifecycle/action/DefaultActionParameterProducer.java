@@ -125,8 +125,8 @@ public class DefaultActionParameterProducer implements ActionParameterProducer {
         ActionQueryParameter result = null;
         if (annotations != null && annotations.length > 0) {
             for (Annotation annotation : annotations) {
-                if (annotation instanceof ActionQueryParameter) {
-                    result = (ActionQueryParameter) annotation;
+                if (annotation instanceof ActionQueryParameter actionQueryParameter) {
+                    result = actionQueryParameter;
                     break;
                 }
             }
