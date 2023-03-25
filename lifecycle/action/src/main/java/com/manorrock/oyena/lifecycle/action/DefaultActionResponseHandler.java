@@ -50,9 +50,9 @@ public class DefaultActionResponseHandler implements ActionResponseHandler {
      * Get the default lifecycle.
      *
      * <p>
-     * FIXME - This method lazily gets the default lifecycle as FactoryFinder is
-     * not properly re-entrant. We should be able to initialize the
-     * defaultLifecycle variable in the constructor of this class. See
+     * NOTE - This method lazily gets the default lifecycle as FactoryFinder is
+     * not properly re-entrant (as of 20230324). We should be able to initialize
+     * the defaultLifecycle variable in the constructor of this class. See
      * https://github.com/eclipse-ee4j/mojarra/issues/4379
      * </p>
      *

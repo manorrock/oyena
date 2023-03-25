@@ -39,7 +39,7 @@ public class RestMappingMatch {
     /**
      * Stores the bean.
      */
-    private Bean<? extends Object> bean;
+    private Bean bean;
 
     /**
      * Stores the method.
@@ -61,7 +61,7 @@ public class RestMappingMatch {
      *
      * @return the bean.
      */
-    public Bean<? extends Object> getBean() {
+    public Bean getBean() {
         return bean;
     }
 
@@ -106,7 +106,7 @@ public class RestMappingMatch {
      *
      * @param bean the bean.
      */
-    public void setBean(Bean<? extends Object> bean) {
+    public void setBean(Bean bean) {
         this.bean = bean;
     }
 

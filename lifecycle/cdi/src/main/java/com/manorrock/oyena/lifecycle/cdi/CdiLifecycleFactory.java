@@ -95,12 +95,14 @@ public class CdiLifecycleFactory extends LifecycleFactory {
             InitialContext initialContext = new InitialContext();
             beanManager = (BeanManager) initialContext.lookup("java:comp/BeanManager");
         } catch (NamingException ne) {
+            // swallowing this on purpose.
         }
         if (beanManager == null) {
             try {
                 InitialContext initialContext = new InitialContext();
                 beanManager = (BeanManager) initialContext.lookup("java:comp/env/BeanManager");
             } catch (NamingException ne) {
+                // swallowing this on purpose.
             }
         }
         return beanManager;
