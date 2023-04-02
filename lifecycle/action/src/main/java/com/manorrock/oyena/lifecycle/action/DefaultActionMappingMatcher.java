@@ -26,8 +26,12 @@
  */
 package com.manorrock.oyena.lifecycle.action;
 
+import static com.manorrock.oyena.lifecycle.action.ActionMappingType.EXACT;
+import static com.manorrock.oyena.lifecycle.action.ActionMappingType.EXTENSION;
+import static com.manorrock.oyena.lifecycle.action.ActionMappingType.PREFIX;
+import static com.manorrock.oyena.lifecycle.action.ActionMappingType.REGEX;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.inject.Any;
+import static jakarta.enterprise.inject.Any.Literal.INSTANCE;
 import jakarta.enterprise.inject.spi.AnnotatedMethod;
 import jakarta.enterprise.inject.spi.AnnotatedType;
 import jakarta.enterprise.inject.spi.Bean;
@@ -57,6 +61,7 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
         Class clazz = bean.getBeanClass();
         AnnotatedType annotatedType = CDI.current().getBeanManager().createAnnotatedType(clazz);
         Set<AnnotatedMethod> annotatedMethodSet = annotatedType.getMethods();
+        boolean done = false;
         for (AnnotatedMethod method : annotatedMethodSet) {
             if (method.isAnnotationPresent(ActionMapping.class)) {
                 ActionMapping requestMapping = method.getAnnotation(ActionMapping.class);
@@ -68,9 +73,9 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
                         result.setBean(bean);
                         result.setMethod(method.getJavaMember());
                         result.setActionMapping(mapping);
-                        result.setMappingType(ActionMappingType.EXACT);
+                        result.setMappingType(EXACT);
                         result.setPathInfo(pathInfo);
-                        break;
+                        done = true;
                     } else if (mapping.endsWith("*")) {
                         mapping = mapping.substring(0, mapping.length() - 1);
                         if (pathInfo.startsWith(mapping)) {
@@ -79,13 +84,13 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
                                 result.setBean(bean);
                                 result.setMethod(method.getJavaMember());
                                 result.setActionMapping(mapping);
-                                result.setMappingType(ActionMappingType.PREFIX);
+                                result.setMappingType(PREFIX);
                                 result.setPathInfo(pathInfo);
                             } else if (mapping.length() > result.getLength()) {
                                 result.setBean(bean);
                                 result.setMethod(method.getJavaMember());
                                 result.setActionMapping(mapping);
-                                result.setMappingType(ActionMappingType.PREFIX);
+                                result.setMappingType(PREFIX);
                                 result.setPathInfo(pathInfo);
                             }
                         }
@@ -96,9 +101,9 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
                             result.setBean(bean);
                             result.setMethod(method.getJavaMember());
                             result.setActionMapping(mapping);
-                            result.setMappingType(ActionMappingType.EXTENSION);
+                            result.setMappingType(EXTENSION);
                             result.setPathInfo(pathInfo);
-                            break;
+                            done = true;
                         }
                     } else if (mapping.startsWith("regex:")) {
                         mapping = mapping.substring("regex:".length());
@@ -107,16 +112,19 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
                             result.setBean(bean);
                             result.setMethod(method.getJavaMember());
                             result.setActionMapping(mapping);
-                            result.setMappingType(ActionMappingType.REGEX);
+                            result.setMappingType(REGEX);
                             result.setPathInfo(pathInfo);
-                            break;
+                            done = true;
                         }
                     }
                 }
             }
             if (result != null
-                    && (result.getMappingType().equals(ActionMappingType.EXACT)
-                    || (result.getMappingType().equals(ActionMappingType.EXTENSION)))) {
+                    && (result.getMappingType().equals(EXACT)
+                    || (result.getMappingType().equals(EXTENSION)))) {
+                done = true;
+            }
+            if (done) {
                 break;
             }
         }
@@ -130,7 +138,7 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
      */
     private Iterator<Bean<?>> getBeans() {
         Set<Bean<?>> beans = CDI.current().getBeanManager().getBeans(
-                Object.class, Any.Literal.INSTANCE);
+                Object.class, INSTANCE);
         return beans.iterator();
     }
 
