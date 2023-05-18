@@ -106,14 +106,9 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
                             done = true;
                         }
                     } else if (mapping.startsWith("regex:")) {
-                        mapping = mapping.substring("regex:".length());
-                        if (Pattern.matches(mapping, pathInfo)) {
-                            result = new ActionMappingMatch();
-                            result.setBean(bean);
-                            result.setMethod(method.getJavaMember());
-                            result.setActionMapping(mapping);
-                            result.setMappingType(REGEX);
-                            result.setPathInfo(pathInfo);
+                        ActionMappingMatch regexMatch = determineRegexMatch(mapping, pathInfo, bean, method);
+                        if (regexMatch != null) {
+                            result = regexMatch;
                             done = true;
                         }
                     }
@@ -129,6 +124,29 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
             }
         }
         return result;
+    }
+
+    /**
+     * Determine if this is a "regex:" match.
+     * 
+     * @param mapping the mapping.
+     * @param pathInfo the path info.
+     * @param bean the bean.
+     * @param method the method.
+     * @return the match, or null if not found.
+     */
+    private ActionMappingMatch determineRegexMatch(String mapping, String pathInfo, Bean<?> bean, AnnotatedMethod method) {
+        ActionMappingMatch regexMatch = null;
+        mapping = mapping.substring("regex:".length());
+        if (Pattern.matches(mapping, pathInfo)) {
+            regexMatch = new ActionMappingMatch();
+            regexMatch.setBean(bean);
+            regexMatch.setMethod(method.getJavaMember());
+            regexMatch.setActionMapping(mapping);
+            regexMatch.setMappingType(REGEX);
+            regexMatch.setPathInfo(pathInfo);
+        }
+        return regexMatch;
     }
 
     /**
