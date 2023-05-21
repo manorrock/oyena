@@ -31,7 +31,7 @@ A project can go into passive mode for either of two reasons. Either the project
 is feature complete and no active development is needed. Or the project is no
 longer considered a priority. Whatever the reason the end result is the same.
 
-So keep in mind, this means:
+This means:
 
 1. No more scheduled monthly releases.
 2. If a bug is filed it is addressed on a best effort basis.
