@@ -135,7 +135,12 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
      * @param method the method.
      * @return the match, or null if not found.
      */
-    private ActionMappingMatch determineRegexMatch(String mapping, String pathInfo, Bean<?> bean, AnnotatedMethod method) {
+    private ActionMappingMatch determineRegexMatch(
+            String mapping, 
+            String pathInfo, 
+            Bean<?> bean, 
+            AnnotatedMethod<?> method) {
+        
         ActionMappingMatch regexMatch = null;
         mapping = mapping.substring("regex:".length());
         if (Pattern.matches(mapping, pathInfo)) {
