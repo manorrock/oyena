@@ -90,49 +90,51 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
         String pathInfo = facesContext.getExternalContext().getRequestPathInfo();
         if (pathInfo != null) {
             ActionMappingType mappingType = determineActionMappingType(mapping, pathInfo);
-            switch (mappingType) {
-                case EXACT -> {
-                    result = new ActionMappingMatch();
-                    result.setBean(bean);
-                    result.setMethod(method.getJavaMember());
-                    result.setActionMapping(mapping);
-                    result.setMappingType(EXACT);
-                    result.setPathInfo(pathInfo);
-                }
-                case PREFIX -> {
-                    mapping = mapping.substring(0, mapping.length() - 1);
-                    if (pathInfo.startsWith(mapping)) {
-                        if (result == null) {
-                            result = new ActionMappingMatch();
-                            result.setBean(bean);
-                            result.setMethod(method.getJavaMember());
-                            result.setActionMapping(mapping);
-                            result.setMappingType(PREFIX);
-                            result.setPathInfo(pathInfo);
-                        } else if (mapping.length() > result.getLength()) {
-                            result.setBean(bean);
-                            result.setMethod(method.getJavaMember());
-                            result.setActionMapping(mapping);
-                            result.setMappingType(PREFIX);
-                            result.setPathInfo(pathInfo);
-                        }
-                    }
-                }
-                case EXTENSION -> {
-                    mapping = mapping.substring(1);
-                    if (pathInfo.endsWith(mapping)) {
+            if (mappingType != null) {
+                switch (mappingType) {
+                    case EXACT -> {
                         result = new ActionMappingMatch();
                         result.setBean(bean);
                         result.setMethod(method.getJavaMember());
                         result.setActionMapping(mapping);
-                        result.setMappingType(EXTENSION);
+                        result.setMappingType(EXACT);
                         result.setPathInfo(pathInfo);
                     }
-                }
-                case REGEX -> {
-                    ActionMappingMatch regexMatch = determineRegexMatch(mapping, pathInfo, bean, method);
-                    if (regexMatch != null) {
-                        result = regexMatch;
+                    case PREFIX -> {
+                        mapping = mapping.substring(0, mapping.length() - 1);
+                        if (pathInfo.startsWith(mapping)) {
+                            if (result == null) {
+                                result = new ActionMappingMatch();
+                                result.setBean(bean);
+                                result.setMethod(method.getJavaMember());
+                                result.setActionMapping(mapping);
+                                result.setMappingType(PREFIX);
+                                result.setPathInfo(pathInfo);
+                            } else if (mapping.length() > result.getLength()) {
+                                result.setBean(bean);
+                                result.setMethod(method.getJavaMember());
+                                result.setActionMapping(mapping);
+                                result.setMappingType(PREFIX);
+                                result.setPathInfo(pathInfo);
+                            }
+                        }
+                    }
+                    case EXTENSION -> {
+                        mapping = mapping.substring(1);
+                        if (pathInfo.endsWith(mapping)) {
+                            result = new ActionMappingMatch();
+                            result.setBean(bean);
+                            result.setMethod(method.getJavaMember());
+                            result.setActionMapping(mapping);
+                            result.setMappingType(EXTENSION);
+                            result.setPathInfo(pathInfo);
+                        }
+                    }
+                    case REGEX -> {
+                        ActionMappingMatch regexMatch = determineRegexMatch(mapping, pathInfo, bean, method);
+                        if (regexMatch != null) {
+                            result = regexMatch;
+                        }
                     }
                 }
             }
