@@ -66,11 +66,11 @@ public class DefaultActionMappingMatcher implements ActionMappingMatcher {
             if (method.isAnnotationPresent(ActionMapping.class)) {
                 ActionMapping requestMapping = method.getAnnotation(ActionMapping.class);
                 result = processAnnotatedMethod(requestMapping, facesContext, result, bean, method);
-                if (result != null) {
-                    switch (result.getMappingType()) {
-                        case EXACT, EXTENSION, REGEX ->
-                            done = true;
-                    }
+                if (result != null
+                        && (result.getMappingType().equals(EXACT)
+                        || result.getMappingType().equals(EXTENSION)
+                        || result.getMappingType().equals(REGEX))) {
+                    done = true;
                 }
             }
             if (result != null
