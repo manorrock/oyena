@@ -16,6 +16,7 @@
     </description>
     <modules>
         <module>action</module>
+        <module>ajax</module>
         <module>cdi</module>
         <module>rest</module>
     </modules>
