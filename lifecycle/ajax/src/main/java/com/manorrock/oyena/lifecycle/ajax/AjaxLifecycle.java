@@ -32,6 +32,7 @@ import jakarta.faces.context.FacesContext;
 import jakarta.faces.event.PhaseListener;
 import jakarta.faces.lifecycle.Lifecycle;
 import jakarta.inject.Named;
+import java.util.ArrayList;
 
 /**
  * The AJAX lifecycle.
@@ -42,6 +43,11 @@ import jakarta.inject.Named;
 @Named("com.manorrock.oyena.lifecycle.ajax.AjaxLifecycle")
 public class AjaxLifecycle extends Lifecycle {
 
+    /**
+     * Stores the phase listeners.
+     */
+    private ArrayList<PhaseListener> phaseListeners = new ArrayList<>();
+    
     /**
      * Constructor.
      */
@@ -60,7 +66,7 @@ public class AjaxLifecycle extends Lifecycle {
      */
     @Override
     public void addPhaseListener(PhaseListener phaseListener) {
-        // phase listeners are not supported.
+        phaseListeners.add(phaseListener);
     }
 
     /**
@@ -76,16 +82,11 @@ public class AjaxLifecycle extends Lifecycle {
     /**
      * Get the phase listeners.
      *
-     * <p>
-     * As phase listeners are not supported by the Action lifecycle this will
-     * always return a zero length array.
-     * </p>
-     *
      * @return the empty array of phase listeners.
      */
     @Override
     public PhaseListener[] getPhaseListeners() {
-        return new PhaseListener[0];
+        return (PhaseListener[]) phaseListeners.toArray();
     }
 
     /**
@@ -99,7 +100,7 @@ public class AjaxLifecycle extends Lifecycle {
      */
     @Override
     public void removePhaseListener(PhaseListener phaseListener) {
-        // phase listeners are not supported.
+        phaseListeners.remove(phaseListener);
     }
 
     /**
