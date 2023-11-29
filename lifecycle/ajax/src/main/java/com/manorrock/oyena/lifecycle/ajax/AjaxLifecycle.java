@@ -77,6 +77,11 @@ public class AjaxLifecycle extends Lifecycle {
      */
     @Override
     public void execute(FacesContext facesContext) throws FacesException {
+        
+        // 1. AjaxRestoreViewPhase
+        new AjaxRestoreViewPhase().execute(facesContext);
+        
+        // 2. Next pase.
     }
 
     /**
@@ -86,7 +91,7 @@ public class AjaxLifecycle extends Lifecycle {
      */
     @Override
     public PhaseListener[] getPhaseListeners() {
-        return (PhaseListener[]) phaseListeners.toArray();
+        return phaseListeners.toArray(PhaseListener[]::new);
     }
 
     /**
