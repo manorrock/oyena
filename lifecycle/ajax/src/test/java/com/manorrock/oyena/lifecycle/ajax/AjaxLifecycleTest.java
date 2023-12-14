@@ -30,7 +30,6 @@ import jakarta.faces.event.PhaseId;
 import jakarta.faces.event.PhaseListener;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * The JUnit tests for the AjaxLifecycle class.
@@ -61,6 +60,6 @@ public class AjaxLifecycleTest {
     @Test
     public void testExecute() {
         AjaxLifecycle lifecycle = new AjaxLifecycle();
-        assertThrows(UnsupportedOperationException.class, () -> {lifecycle.execute(null); });
+        lifecycle.execute(null);
     }
 }

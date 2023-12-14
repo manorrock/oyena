@@ -38,7 +38,6 @@ public class AjaxRestoreViewPhase implements AjaxPhase {
 
     @Override
     public void execute(FacesContext facesContext) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
     
     @Override
