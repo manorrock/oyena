@@ -5,6 +5,13 @@
 Manorrock Oyena delivers you with add-on modules that you can use with your
 Jakarta Faces applications.
 
+## Prerequisites
+
+1. Java 21
+1. Jakarta EE 10 or Jakarta Faces 4
+
+## Supported modules
+
 See the list below for the modules that are available.
 
 1. [Action framework](lifecycle/action/README.md)
