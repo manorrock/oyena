@@ -52,11 +52,16 @@ public class BytesConverter implements Converter {
      * Stores the megabyte constant.
      */
     private static final long MEGABYTE = 1024L * 1024;
-    
+
     /**
      * Stores the terabyte constant.
      */
     private static final long TERABYTE = 1024L * 1024 * 1024 * 1024;
+    
+    /**
+     * Stores the petabyte constant.
+     */
+    private static final long PETABYTE = 1024L * 1024 * 1024 * 1024 * 1024;
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
@@ -83,6 +88,8 @@ public class BytesConverter implements Converter {
                 result = Long.toString(longValue / MEGABYTE) + " MB";
             } else if (longValue < TERABYTE) {
                 result = Long.toString(longValue / GIGABYTE) + " GB";
+            } else if (longValue < PETABYTE) {
+                result = Long.toString(longValue / PETABYTE) + " PB";
             }
         }
 
